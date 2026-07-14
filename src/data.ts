@@ -15,7 +15,8 @@ export const DESTINATIONS: Destination[] = [
     elevation: '2,438 m (8,000 ft)',
     bestSeason: 'Spring Blossom (Apr) / Autumn Foliage (Oct)',
     coordinates: '36.3167° N, 74.6500° E',
-    coverImage: '/src/assets/images/hero_mountain_1784037773882.jpg',
+    // coverImage: '/src/assets/images/hero_mountain_1784037773882.jpg',
+    coverImage: 'https://www.trips.pk/main-root/transferImages/hunza%20valley.jpg',
     highlights: ['Altit & Baltit Ancient Forts', 'Eagle\'s Nest Panoramic Sunset', 'Attabad Turquoise Lake Boating', 'Hussaini Suspension Bridge crossing'],
     adventureTier: 'Medium - Exploration'
   },
