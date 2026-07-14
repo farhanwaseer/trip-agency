@@ -28,7 +28,8 @@ export const DESTINATIONS: Destination[] = [
     elevation: '3,300 m (10,826 ft)',
     bestSeason: 'June to September',
     coordinates: '35.3853° N, 74.5828° E',
-    coverImage: '/src/assets/images/fairy_meadows_1784037808880.jpg',
+    // coverImage: '/src/assets/images/fairy_meadows_1784037808880.jpg',
+    coverImage: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Nanga_Parbat_The_Killer_Mountain.jpg',
     highlights: ['Raikot Bridge 4x4 Jeep Track', 'Trek to Beyal Camp & Base Camp', 'Alpine Cabin stargazing', 'Reflection of Nanga Parbat in mystical pools'],
     adventureTier: 'High - Trekking & Alpine Camping'
   },
@@ -40,7 +41,8 @@ export const DESTINATIONS: Destination[] = [
     elevation: '4,114 m (13,497 ft)',
     bestSeason: 'July and August',
     coordinates: '34.9961° N, 75.4744° E',
-    coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
+    // coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
+    coverImage: 'https://guidetourismpakistan.com/wp-content/uploads/2024/01/Deosai-plains-17.jpeg',
     highlights: ['Sheosar High-Altitude Lake', 'Bara Pani stream crossing', 'Milky Way Astrophotography', 'Himalayan Brown Bear safari'],
     adventureTier: 'Very High - Wilderness Survival & Camping'
   },
@@ -52,7 +54,8 @@ export const DESTINATIONS: Destination[] = [
     elevation: '2,230 m (7,316 ft)',
     bestSeason: 'May to September',
     coordinates: '35.2981° N, 75.6347° E',
-    coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
+    // coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
+    coverImage: 'https://wallpaperaccess.com/full/9806206.jpg',
     highlights: ['Shangrila Resort & Kachura Lakes', 'Katpana Cold Desert Sand Dunes', 'Shigar Valley & restored Fort', 'Manthal ancient Buddha rock carvings'],
     adventureTier: 'Medium - Cultural Road Trip'
   },
@@ -64,7 +67,7 @@ export const DESTINATIONS: Destination[] = [
     elevation: '2,409 m (7,903 ft)',
     bestSeason: 'May to October',
     coordinates: '34.9085° N, 73.6521° E',
-    coverImage: 'https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=1200&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1572482520019-159781d56ae9?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmFyYW4lMjBrYWdoYW58ZW58MHx8MHx8fDA%3D',
     highlights: ['Lake Saif-ul-Muluk boat expedition', 'White-Water Rafting on Kunhar River', 'Siri Paye cloud meadows trek', 'Babusar Pass viewpoint (4,173m)'],
     adventureTier: 'Light - Active Recreation'
   },
