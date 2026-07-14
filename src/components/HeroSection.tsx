@@ -31,7 +31,7 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentAlertIndex((prev) => (prev + 1) % EXPEDITION_ALERTS.length);
-    }, 6000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
