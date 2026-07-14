@@ -378,7 +378,7 @@ export const TOURS: Tour[] = [
     costUSD: 225,
     departureFrom: 'Islamabad F-7 Departure Hub',
     isPopular: false,
-    coverImage: 'https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/5c078486bdf6900014c6c8d8/files/pakistan-passu-hunza-gilgit-karakoram-travel-photo-20181204145540920-main-image.jpg',
+    coverImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
     highlights: [
       'Led by award-winning Pakistani landscape photographers',
       'In-the-field golden-hour, blue-hour, and ND filter workshops',
@@ -443,7 +443,8 @@ export const TOURS: Tour[] = [
     costUSD: 310,
     departureFrom: 'Islamabad F-7 Departure Hub',
     isPopular: true,
-    coverImage: '/src/assets/images/hero_mountain_1784037773882.jpg',
+    // coverImage: '/src/assets/images/hero_mountain_1784037773882.jpg',
+    coverImage: 'https://www.trips.pk/main-root/transferImages/hunza%20valley.jpg',
     highlights: [
       'Stay in luxury heated geodesic glamping domes in Hunza',
       'Exclusive high-speed chartered coasters & logistics',
