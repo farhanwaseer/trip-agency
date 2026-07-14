@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-brand-amber: #f59e0b;
+  --color-brand-orange: #f97316;
+  --color-brand-slate: #050505;
+}
+
+/* Theme variable declarations */
+html.light-mode {
+  --bg-color: #f8fafc;
+  --text-color: #334155;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-border-subtle: rgba(15, 23, 42, 0.04);
+  --glass-panel-bg: rgba(255, 255, 255, 0.65);
+  --input-bg: #ffffff;
+  --input-border: rgba(15, 23, 42, 0.1);
+  --title-color: #0f172a;
+}
+
+:root, html.dark-mode {
+  --bg-color: #050505;
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-panel-bg: rgba(255, 255, 255, 0.05);
+  --input-bg: #050505;
+  --input-border: rgba(255, 255, 255, 0.1);
+  --title-color: #ffffff;
+}
+
+/* Custom styles for high-fidelity interactive elements */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar for premium slickness */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Glow animations and glass effects matching Immersive UI */
+.glass-panel {
+  background: var(--glass-panel-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.15);
+}
+
+.glow-orange {
+  box-shadow: 0 0 35px rgba(249, 115, 22, 0.15);
+}
+
+.glow-green {
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.15);
+}
+
+/* High-fidelity overrides for light mode elements */
+html.light-mode .bg-white\/5 {
+  background-color: var(--card-bg) !important;
+}
+html.light-mode .border-white\/10 {
+  border-color: var(--card-border) !important;
+}
+html.light-mode .border-white\/5 {
+  border-color: var(--card-border-subtle) !important;
+}
+html.light-mode .text-slate-400 {
+  color: var(--text-muted) !important;
+}
+html.light-mode .text-slate-300 {
+  color: #475569 !important; /* text-slate-600 */
+}
+html.light-mode .text-slate-200 {
+  color: #1e293b !important; /* text-slate-800 */
+}
+html.light-mode .text-slate-100 {
+  color: #0f172a !important; /* text-slate-900 */
+}
+html.light-mode .text-slate-50 {
+  color: #0f172a !important; /* text-slate-900 */
+}
+
+/* Intelligent light-mode text-white override */
+html.light-mode .text-white:not(button):not(a):not(.bg-brand-orange *):not(.bg-emerald-500 *):not(.text-emerald-400 *):not(#home *) {
+  color: #0f172a !important;
+}
+
+html.light-mode .bg-\[\#050505\] {
+  background-color: var(--input-bg) !important;
+}
+html.light-mode .bg-\[\#070b16\] {
+  background-color: var(--card-bg) !important;
+}
+
+/* Headings colors in light-mode */
+html.light-mode h1,
+html.light-mode h2,
+html.light-mode h3,
+html.light-mode h4,
+html.light-mode h5,
+html.light-mode h6 {
+  color: var(--title-color) !important;
+}
+
+/* Do NOT override hero background image, overlay, or text color */
+html.light-mode #home h1,
+html.light-mode #home h2,
+html.light-mode #home h3,
+html.light-mode #home p,
+html.light-mode #home span,
+html.light-mode #home select,
+html.light-mode #home option {
+  color: #ffffff !important;
+}
+/* For quick search inside Hero: options should be dark in light mode for accessibility */
+html.light-mode #home option {
+  color: #0f172a !important;
+}
+html.light-mode #home select {
+  color: #ffffff !important;
+}
+
+/* Overrides for Navbar in light mode */
+html.light-mode nav {
+  background-color: rgba(248, 250, 252, 0.8) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+html.light-mode nav button, html.light-mode nav span, html.light-mode nav a {
+  color: #0f172a !important;
+}
+html.light-mode nav .text-slate-300 {
+  color: #334155 !important;
+}
+
+/* Ensure favorites/bookings count or active badges still look good */
+html.light-mode .bg-brand-orange, html.light-mode .text-brand-orange {
+  color: #f97316 !important;
+}
+html.light-mode .bg-brand-orange {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}
+
+/* Adjust fixed atmospheric background glow to soft gradients in light mode */
+html.light-mode .fixed .bg-\[\#1a365d\] {
+  background-color: #bfdbfe !important;
+  opacity: 0.4 !important;
+}
+html.light-mode .fixed .bg-\[\#7c2d12\] {
+  background-color: #ffedd5 !important;
+  opacity: 0.4 !important;
+}
+/* Hide peak silhouettes in light mode or make them light grey */
+html.light-mode .fixed .bg-gradient-to-b {
+  --tw-gradient-from: #f1f5f9 !important;
+  --tw-gradient-to: #e2e8f0 !important;
+  opacity: 0.5 !important;
+}
+

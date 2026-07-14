@@ -1,0 +1,6 @@
+{
+  "name": "Karakoram Expeditions",
+  "description": "A premium, modern adventure travel experience specializing in immersive tours to the Northern Areas of Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
