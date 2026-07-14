@@ -63,7 +63,7 @@ export default function Navbar({
                 ASTRA VIA
                 {/* <span className="text-xs font-mono font-medium px-1.5 py-0.5 bg-brand-orange/10 border border-brand-orange/30 text-brand-orange rounded">EXP</span> */}
               </span>
-              <span className="block text-[10px] font-mono tracking-widest text-slate-400 uppercase">Islamabad Basecamp</span>
+              <span className="block text-[10px] font-mono tracking-widest text-slate-400 uppercase">Islamabad</span>
             </div>
           </div>
 
