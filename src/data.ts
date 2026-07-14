@@ -122,7 +122,8 @@ export const TOURS: Tour[] = [
     costUSD: 175,
     departureFrom: 'Islamabad F-7 Departure Hub',
     isPopular: true,
-    coverImage: '/src/assets/images/fairy_meadows_1784037808880.jpg',
+    // coverImage: '/src/assets/images/fairy_meadows_1784037808880.jpg',
+    coverImage: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Nanga_Parbat_The_Killer_Mountain.jpg',
     highlights: [
       'Trek to Beyal Camp & Nanga Parbat Viewpoint',
       'Thrilling 4x4 Raikot Jeep Track ride',
@@ -179,7 +180,8 @@ export const TOURS: Tour[] = [
     costUSD: 210,
     departureFrom: 'Islamabad F-7 Departure Hub',
     isPopular: true,
-    coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
+    // coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
+    coverImage: 'https://guidetourismpakistan.com/wp-content/uploads/2024/01/Deosai-plains-17.jpeg',
     highlights: [
       'Wild camp under the Milky Way at Sheosar Lake (4,114m)',
       'Astro-photography workshop with professional guide',
@@ -244,7 +246,9 @@ export const TOURS: Tour[] = [
     costUSD: 130,
     departureFrom: 'Islamabad F-7 Departure Hub',
     isPopular: false,
-    coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
+    // coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
+    coverImage: 'https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/5c078486bdf6900014c6c8d8/files/pakistan-passu-hunza-gilgit-karakoram-travel-photo-20181204145540920-main-image.jpg',
+    
     highlights: [
       'Travel the epic Karakoram Highway (KKH) in a classic caravan',
       'Sunset at Eagle\'s Nest overlooking Rakaposhi & Ladyfinger Peak',
@@ -374,7 +378,7 @@ export const TOURS: Tour[] = [
     costUSD: 225,
     departureFrom: 'Islamabad F-7 Departure Hub',
     isPopular: false,
-    coverImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    coverImage: 'https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/5c078486bdf6900014c6c8d8/files/pakistan-passu-hunza-gilgit-karakoram-travel-photo-20181204145540920-main-image.jpg',
     highlights: [
       'Led by award-winning Pakistani landscape photographers',
       'In-the-field golden-hour, blue-hour, and ND filter workshops',
