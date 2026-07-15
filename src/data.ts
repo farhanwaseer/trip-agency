@@ -6,10 +6,13 @@
 import { Destination, Tour, TravelerStory, ExpeditionAlert } from "./types";
 
 // DESTINATIONS IMAGES
+import Hero2 from "../src/assets/images/hero_pic2.jpg"
+import Hero3 from "../src/assets/images/hero_pic3.jpg"
+import Tour1 from "../src/assets/images/tour_pic1.jpg"
 import Destination1 from "../src/assets/images/destination_pic1.jpg";
-import Destination2 from "../src/assets/images/destination_pic3.jpg";
-import Destination3 from "../src/assets/images/destination_pic4.jpg";
-import Destination4 from "../src/assets/images/destination_pic2.jpg";
+import Destination2 from "../src/assets/images/destination_pic2.jpg";
+import Destination3 from "../src/assets/images/destination_pic3.jpg";
+import Destination4 from "../src/assets/images/destination_pic4.jpg";
 import Destination5 from "../src/assets/images/destination_pic5.jpg";
 import Destination6 from "../src/assets/images/destination_pic6.jpg";
 import Destination7 from "../src/assets/images/destination_pic7.jpg";
@@ -27,8 +30,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "Spring Blossom (Apr) / Autumn Foliage (Oct)",
     coordinates: "36.3167° N, 74.6500° E",
     coverImage: Destination1,
-    // coverImage: '/src/assets/images/hero_mountain_1784037773882.jpg',
-    // coverImage: 'https://www.trips.pk/main-root/transferImages/hunza%20valley.jpg',
     highlights: [
       "Altit & Baltit Ancient Forts",
       "Eagle's Nest Panoramic Sunset",
@@ -47,8 +48,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "June to September",
     coordinates: "35.3853° N, 74.5828° E",
     coverImage: Destination2,
-    // coverImage: '/src/assets/images/fairy_meadows_1784037808880.jpg',
-    // coverImage: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Nanga_Parbat_The_Killer_Mountain.jpg',
     highlights: [
       "Raikot Bridge 4x4 Jeep Track",
       "Trek to Beyal Camp & Base Camp",
@@ -67,8 +66,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "July and August",
     coordinates: "34.9961° N, 75.4744° E",
     coverImage: Destination3,
-    // coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
-    // coverImage: 'https://guidetourismpakistan.com/wp-content/uploads/2024/01/Deosai-plains-17.jpeg',
     highlights: [
       "Sheosar High-Altitude Lake",
       "Bara Pani stream crossing",
@@ -87,8 +84,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "May to September",
     coordinates: "35.2981° N, 75.6347° E",
     coverImage: Destination4,
-    // coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
-    // coverImage: 'https://wallpaperaccess.com/full/9806206.jpg',
     highlights: [
       "Shangrila Resort & Kachura Lakes",
       "Katpana Cold Desert Sand Dunes",
@@ -107,7 +102,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "May to October",
     coordinates: "34.9085° N, 73.6521° E",
     coverImage: Destination5,
-    // coverImage: 'https://images.unsplash.com/photo-1572482520019-159781d56ae9?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmFyYW4lMjBrYWdoYW58ZW58MHx8MHx8fDA%3D',
     highlights: [
       "Lake Saif-ul-Muluk boat expedition",
       "White-Water Rafting on Kunhar River",
@@ -126,7 +120,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "Year-Round (Skiing in Jan, Trekking in Jun)",
     coordinates: "35.2227° N, 72.4258° E",
     coverImage: Destination6,
-    // coverImage: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80',
     highlights: [
       "Malam Jabba Ski Resort & Ziplining",
       "Kalam Valley & Ushu Pine Forest",
@@ -145,7 +138,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "March to November",
     coordinates: "34.6295° N, 73.4619° E",
     coverImage: Destination7,
-    // coverImage: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80',
     highlights: [
       "Siri Paye Meadows horse ride",
       "Hiking up to Siri Ridge",
@@ -164,7 +156,6 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: "May to October",
     coordinates: "36.8521° N, 75.4182° E",
     coverImage: Destination8,
-    // coverImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
     highlights: [
       "Pakistan-China Friendship Arch",
       "World's Highest ATM transaction",
@@ -188,9 +179,7 @@ export const TOURS: Tour[] = [
     costUSD: 175,
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: true,
-    // coverImage: '/src/assets/images/fairy_meadows_1784037808880.jpg',
-    coverImage:
-      "https://upload.wikimedia.org/wikipedia/commons/2/29/Nanga_Parbat_The_Killer_Mountain.jpg",
+    coverImage: Destination2,
     highlights: [
       "Trek to Beyal Camp & Nanga Parbat Viewpoint",
       "Thrilling 4x4 Raikot Jeep Track ride",
@@ -252,8 +241,7 @@ export const TOURS: Tour[] = [
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: true,
     // coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
-    coverImage:
-      "https://guidetourismpakistan.com/wp-content/uploads/2024/01/Deosai-plains-17.jpeg",
+    coverImage: Destination3,
     highlights: [
       "Wild camp under the Milky Way at Sheosar Lake (4,114m)",
       "Astro-photography workshop with professional guide",
@@ -324,9 +312,7 @@ export const TOURS: Tour[] = [
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: false,
     // coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
-    coverImage:
-      "https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/5c078486bdf6900014c6c8d8/files/pakistan-passu-hunza-gilgit-karakoram-travel-photo-20181204145540920-main-image.jpg",
-
+    coverImage: Tour1,
     highlights: [
       "Travel the epic Karakoram Highway (KKH) in a classic caravan",
       "Sunset at Eagle's Nest overlooking Rakaposhi & Ladyfinger Peak",
@@ -405,8 +391,7 @@ export const TOURS: Tour[] = [
     costUSD: 115,
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: false,
-    coverImage:
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80",
+    coverImage: Hero3,
     highlights: [
       "Learn skiing or snowboarding at Malam Jabba Ski Resort",
       "Off-road 4x4 Jeep safari to Ushu Forest and Mahodand Lake",
@@ -467,8 +452,7 @@ export const TOURS: Tour[] = [
     costUSD: 225,
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: false,
-    coverImage:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    coverImage: Hero2,
     highlights: [
       "Led by award-winning Pakistani landscape photographers",
       "In-the-field golden-hour, blue-hour, and ND filter workshops",
@@ -539,8 +523,7 @@ export const TOURS: Tour[] = [
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: true,
     // coverImage: '/src/assets/images/hero_mountain_1784037773882.jpg',
-    coverImage:
-      "https://www.trips.pk/main-root/transferImages/hunza%20valley.jpg",
+    coverImage: Destination1,
     highlights: [
       "Stay in luxury heated geodesic glamping domes in Hunza",
       "Exclusive high-speed chartered coasters & logistics",

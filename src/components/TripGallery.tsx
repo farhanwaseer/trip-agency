@@ -7,6 +7,16 @@ import React, { useState } from 'react';
 import { Camera, Maximize2, X, Compass, ArrowRight, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+// GALLERY_IMAGES
+import Gallery1 from "../assets/images/gallery_pic1.jpg";
+import Gallery2 from "../assets/images/gallery_pic2.jpg";
+import Gallery3 from "../assets/images/gallery_pic3.jpg";
+import Gallery6 from "../assets/images/gallery_pic6.jpg";
+import Gallery7 from "../assets/images/gallery_pic7.jpg";
+import Gallery8 from "../assets/images/gallery_pic8.jpg";
+import Hero2 from "../assets/images/hero_pic2.jpg"
+import Hero3 from "../assets/images/hero_pic3.jpg"
+
 interface GalleryItem {
   id: string;
   title: string;
@@ -23,7 +33,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Passu Cones Golden Hour',
     location: 'Gojal, Hunza Valley',
     category: 'Hunza',
-    imageUrl: 'https://images.unsplash.com/photo-1621244249243-436b79b5eea8?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Gallery1,
     description: 'The iconic, razor-sharp peaks of Passu Cones standing tall against a glowing evening sunset sky.',
     photographer: 'Zain Malik'
   },
@@ -32,7 +42,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Attabad Turquoise Mirror',
     location: 'Hunza Valley',
     category: 'Hunza',
-    imageUrl: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Gallery2, 
     description: 'The mesmerizing bright-turquoise waters of Attabad Lake reflecting the dry canyon peaks around it.',
     photographer: 'Aisha Shah'
   },
@@ -41,7 +51,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Nanga Parbat Amphitheater',
     location: 'Fairy Meadows',
     category: 'Fairy Meadows',
-    imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Hero2, 
     description: 'The monumental, intimidating north face of the "Killer Mountain" seen directly from the soft alpine cabins.',
     photographer: 'Sheraz Ali'
   },
@@ -50,7 +60,8 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Camp Under Milky Way',
     location: 'Sheosar Lake, Deosai Plains',
     category: 'Deosai',
-    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Gallery3,
+    // 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80',
     description: 'A stellar night at 4,114m. Clear cosmic views of the Milky Way galaxy spanning across high-altitude tents.',
     photographer: 'Aisha Malik'
   },
@@ -59,7 +70,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Upper Kachura Mirror Lake',
     location: 'Skardu, Baltistan',
     category: 'Skardu',
-    imageUrl: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Hero3,
     description: 'Tucked deep in Skardu, the pristine, crystal-clear lake mirrors the massive surrounding Karakoram dunes.',
     photographer: 'Hamza Khan'
   },
@@ -68,7 +79,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Katpana Desert Caravan',
     location: 'Skardu, Baltistan',
     category: 'Skardu',
-    imageUrl: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Gallery6,
     description: 'High-altitude cold sand dunes under a harsh alpine sun, creating incredible landscape textures.',
     photographer: 'Farhan Sheikh'
   },
@@ -77,7 +88,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Alpine Cabin Woods',
     location: 'Kalam Valley, Swat',
     category: 'Swat',
-    imageUrl: 'https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Gallery7,
     description: 'Lush, misty green pine forest trails and roaring glacial streams cutting through Swat Valley.',
     photographer: 'Imran Chaudhry'
   },
@@ -86,7 +97,7 @@ const GALLERY_IMAGES: GalleryItem[] = [
     title: 'Sheosar Sunrise Glow',
     location: 'Deosai National Park',
     category: 'Deosai',
-    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: Gallery8,
     description: 'Freezing wind and golden sunrise beams striking the high mountains surrounding the great Deosai plateau.',
     photographer: 'Sana Ahmed'
   }

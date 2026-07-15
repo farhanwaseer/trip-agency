@@ -209,18 +209,18 @@ export default function App() {
           onBookTour={handleBookTour}
         />
 
+        {/* Social Traveler stories reviews */}
+        <TravelerStories />
+
         {/* Stateful Trip Configurator / Booking System */}
-        <InteractiveCustomizer
+        {/* <InteractiveCustomizer
           preSelectedTourId={preSelectedTourId}
           setPreSelectedTourId={setPreSelectedTourId}
           onBookingSuccess={handleBookingSuccess}
-        />
+        /> */}
 
         {/* Islamabad HQ Departure Basecamp */}
         <IslamabadBasecamp />
-
-        {/* Social Traveler stories reviews */}
-        <TravelerStories />
 
         {/* Gallery Section */}
         <TripGallery />
