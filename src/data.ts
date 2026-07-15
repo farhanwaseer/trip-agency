@@ -240,7 +240,6 @@ export const TOURS: Tour[] = [
     costUSD: 210,
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: true,
-    // coverImage: '/src/assets/images/camping_deosai_1784037793474.jpg',
     coverImage: Destination3,
     highlights: [
       "Wild camp under the Milky Way at Sheosar Lake (4,114m)",
@@ -311,7 +310,6 @@ export const TOURS: Tour[] = [
     costUSD: 130,
     departureFrom: "Islamabad F-7 Departure Hub",
     isPopular: false,
-    // coverImage: '/src/assets/images/road_trip_karakoram_1784037823241.jpg',
     coverImage: Tour1,
     highlights: [
       "Travel the epic Karakoram Highway (KKH) in a classic caravan",

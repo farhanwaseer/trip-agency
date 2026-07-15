@@ -38,14 +38,7 @@ export default function HeroSection({
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
-  const BACKGROUND_IMAGES = [
-    hero1,
-    hero2,
-    hero3,
-    hero4,
-    hero5,
-    hero6,
-  ];
+  const BACKGROUND_IMAGES = [hero1, hero2, hero3, hero4, hero5, hero6];
 
   // Auto-scrolling live expedition alerts
   useEffect(() => {
@@ -98,7 +91,7 @@ export default function HeroSection({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 1.6, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute inset-0 w-full h-full object-cover object-center filter brightness-75 contrast-105"
+            className="absolute inset-0 w-full h-full object-cover object-center filter "
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
@@ -108,20 +101,6 @@ export default function HeroSection({
 
       {/* Main Content Area */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center pt-12 pb-8">
-        {/* Expedition Status Banner */}
-        <div className="mb-6 inline-flex max-w-lg self-start">
-          <div className="flex items-center space-x-2.5 bg-slate-950/80 backdrop-blur-md border border-brand-orange/30 px-3.5 py-1.5 rounded-full shadow-lg">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
-            </span>
-            <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-wider text-slate-300 uppercase flex items-center gap-1.5">
-              <Activity className="w-3.5 h-3.5 text-brand-orange animate-pulse" />
-              Basecamp Status: Departures fully active to Hunza & Skardu
-            </span>
-          </div>
-        </div>
-
         {/* Cinematic Headers */}
         <div className="max-w-3xl">
           <span className="block font-mono text-xs sm:text-sm font-bold tracking-[0.4em] text-brand-orange uppercase mb-3">

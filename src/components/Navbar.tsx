@@ -3,9 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { Compass, Menu, X, Landmark, Compass as TicketIcon, AlertCircle, Heart, Sun, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Compass,
+  Menu,
+  X,
+  Landmark,
+  Compass as TicketIcon,
+  AlertCircle,
+  Heart,
+  Sun,
+  Moon,
+} from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 interface NavbarProps {
   activeSection: string;
@@ -14,7 +24,7 @@ interface NavbarProps {
   onOpenBookings: () => void;
   favoritesCount: number;
   onOpenFavorites: () => void;
-  theme: 'dark' | 'light';
+  theme: "dark" | "light";
   toggleTheme: () => void;
 }
 
@@ -26,17 +36,22 @@ export default function Navbar({
   favoritesCount,
   onOpenFavorites,
   theme,
-  toggleTheme
+  toggleTheme,
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef<number>(
+    typeof window !== "undefined" ? window.scrollY : 0,
+  );
+  const [isAfterHero, setIsAfterHero] = useState(false);
 
   const menuItems = [
-    { id: 'home', label: 'Basecamp' },
-    { id: 'destinations', label: 'Destinations' },
-    { id: 'tours', label: 'Packages' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'about', label: 'About Us' },
-    { id: 'contact', label: 'Contact' }
+    { id: "home", label: "Basecamp" },
+    { id: "destinations", label: "Destinations" },
+    { id: "tours", label: "Packages" },
+    { id: "gallery", label: "Gallery" },
+    { id: "about", label: "About Us" },
+    { id: "contact", label: "Contact" },
   ];
 
   const handleNavClick = (id: string) => {
@@ -44,17 +59,59 @@ export default function Navbar({
     setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
+  // Observe if we've scrolled past the hero section
+  useEffect(() => {
+    const hero = document.getElementById("home");
+    if (!hero) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsAfterHero(!entry.isIntersecting);
+        });
+      },
+      { root: null, threshold: 0.05 },
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
+  // Hide on scroll down (only after leaving hero), show on scroll up
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (currentY > lastScrollY.current && isAfterHero) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+          lastScrollY.current = currentY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isAfterHero]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5 shadow-2xl transition-all duration-300">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5 shadow-2xl transform transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleNavClick('home')}>
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={() => handleNavClick("home")}
+          >
             <div className="bg-brand-orange/20 p-2 rounded-lg border border-brand-orange/40 text-brand-orange shadow-inner shadow-brand-orange/20">
               <Compass className="w-6 h-6 animate-spin-slow" />
             </div>
@@ -63,7 +120,9 @@ export default function Navbar({
                 ASTRA VIA
                 {/* <span className="text-xs font-mono font-medium px-1.5 py-0.5 bg-brand-orange/10 border border-brand-orange/30 text-brand-orange rounded">EXP</span> */}
               </span>
-              <span className="block text-[10px] font-mono tracking-widest text-slate-400 uppercase">Islamabad</span>
+              <span className="block text-[10px] font-mono tracking-widest text-slate-400 uppercase">
+                Islamabad
+              </span>
             </div>
           </div>
 
@@ -73,10 +132,10 @@ export default function Navbar({
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-4 py-2 rounded-lg font-sans text-sm font-medium tracking-wide transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg font-sans text-sm  font-medium drop-shadow-sm tracking-wide transition-all duration-200 ${
                   activeSection === item.id
-                    ? 'text-brand-orange bg-white/5 border border-white/10'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5 border border-transparent'
+                    ? "text-brand-orange bg-white/5 border border-white/10"
+                    : "text-slate-300 hover:text-white hover:bg-white/5 border  border-transparent"
                 }`}
               >
                 {item.label}
@@ -92,16 +151,26 @@ export default function Navbar({
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="font-mono text-xs font-semibold tracking-wider">LIVE RECON</span>
+              <span className="font-mono text-xs font-semibold tracking-wider">
+                LIVE RECON
+              </span>
             </div>
 
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-brand-orange hover:border-brand-orange/40 transition-all cursor-pointer"
-              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              title={
+                theme === "dark"
+                  ? "Switch to Light Mode"
+                  : "Switch to Dark Mode"
+              }
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5 text-amber-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-indigo-400" />
+              )}
             </button>
 
             {/* Favorites Icon */}
@@ -110,7 +179,9 @@ export default function Navbar({
               className="relative p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-red-400 hover:border-red-500/40 transition-all cursor-pointer"
               title="Favorite Expeditions"
             >
-              <Heart className={`w-5 h-5 ${favoritesCount > 0 ? 'fill-red-500 text-red-500' : ''}`} />
+              <Heart
+                className={`w-5 h-5 ${favoritesCount > 0 ? "fill-red-500 text-red-500" : "fill-red-500 text-red-500"}`}
+              />
               {favoritesCount > 0 && (
                 <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white font-mono text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center border-2 border-slate-950 animate-bounce">
                   {favoritesCount}
@@ -139,9 +210,17 @@ export default function Navbar({
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 transition-all cursor-pointer"
-              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              title={
+                theme === "dark"
+                  ? "Switch to Light Mode"
+                  : "Switch to Dark Mode"
+              }
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-indigo-400" />}
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5 text-amber-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-indigo-400" />
+              )}
             </button>
 
             {/* Small screen actions */}
@@ -149,7 +228,9 @@ export default function Navbar({
               onClick={onOpenFavorites}
               className="relative p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-red-400 transition-all"
             >
-              <Heart className={`w-5 h-5 ${favoritesCount > 0 ? 'fill-red-500 text-red-500' : ''}`} />
+              <Heart
+                className={`w-5 h-5 ${favoritesCount > 0 ? "fill-red-500 text-red-500" : ""}`}
+              />
               {favoritesCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white font-mono text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
                   {favoritesCount}
@@ -173,10 +254,13 @@ export default function Navbar({
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -185,7 +269,7 @@ export default function Navbar({
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden glass-panel border-t border-white/5 overflow-hidden"
           >
@@ -196,8 +280,8 @@ export default function Navbar({
                   onClick={() => handleNavClick(item.id)}
                   className={`block w-full text-left px-4 py-3 rounded-lg font-sans text-base font-medium transition-all ${
                     activeSection === item.id
-                      ? 'text-brand-orange bg-brand-orange/10 font-semibold'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      ? "text-brand-orange bg-brand-orange/10 font-semibold"
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {item.label}
@@ -208,7 +292,9 @@ export default function Navbar({
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
                   RECON ONLINE
                 </span>
-                <span className="font-mono text-xs text-slate-500">Departures Daily</span>
+                <span className="font-mono text-xs text-slate-500">
+                  Departures Daily
+                </span>
               </div>
             </div>
           </motion.div>
