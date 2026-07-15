@@ -5,6 +5,10 @@
 
 import { Destination, Tour, TravelerStory, ExpeditionAlert } from './types';
 
+// DESTINATIONS IMAGES
+
+
+
 // Let's use our generated premium images for destinations
 export const DESTINATIONS: Destination[] = [
   {

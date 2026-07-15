@@ -3,33 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { Search, MapPin, Compass, ShieldAlert, ArrowRight, Activity, Calendar } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { EXPEDITION_ALERTS, DESTINATIONS } from '../data';
+import React, { useState, useEffect } from "react";
+import {
+  Search,
+  MapPin,
+  Compass,
+  ShieldAlert,
+  ArrowRight,
+  Activity,
+  Calendar,
+} from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { EXPEDITION_ALERTS, DESTINATIONS } from "../data";
+
+// Hero images
+import hero1 from "../assets/images/hero_pic1.jpg";
+import hero2 from "../assets/images/hero_pic2.jpg";
+import hero3 from "../assets/images/hero_pic3.jpg";
+import hero4 from "../assets/images/hero_pic4.jpg";
+import hero5 from "../assets/images/hero_pic5.jpg";
+import hero6 from "../assets/images/hero_pic6.jpg";
 
 interface HeroSectionProps {
   onSearch: (destinationId: string, category: string) => void;
   onExploreTours: () => void;
 }
 
-export default function HeroSection({ onSearch, onExploreTours }: HeroSectionProps) {
+export default function HeroSection({
+  onSearch,
+  onExploreTours,
+}: HeroSectionProps) {
   const [currentAlertIndex, setCurrentAlertIndex] = useState(0);
-  const [selectedDestination, setSelectedDestination] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedDestination, setSelectedDestination] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   const BACKGROUND_IMAGES = [
-    '/src/assets/images/hero_pic1.jpg', // Original beautiful Passu cones/Karakoram
-    '/src/assets/images/hero_pic2.jpg',
-    '/src/assets/images/hero_pic3.jpg',
-    '/src/assets/images/hero_pic4.jpg',
-    '/src/assets/images/hero_pic5.jpg',
-    '/src/assets/images/hero_pic6.jpg',
-    // 'https://images.unsplash.com/photo-1621244249243-436b79b5eea8?auto=format&fit=crop&w=2000&q=90', // Passu Cones golden hour
-    // 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=90', // Turquoise Attabad Lake
-    // 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=90', // Nanga Parbat majestic face
-    // 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=2000&q=90'  // Skardu high-altitude mirror water
+    hero1,
+    hero2,
+    hero3,
+    hero4,
+    hero5,
+    hero6,
   ];
 
   // Auto-scrolling live expedition alerts
@@ -52,24 +67,26 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
     e.preventDefault();
     onSearch(selectedDestination, selectedCategory);
     // Smooth scroll down to tours list
-    const toursSection = document.getElementById('tours');
+    const toursSection = document.getElementById("tours");
     if (toursSection) {
-      toursSection.scrollIntoView({ behavior: 'smooth' });
+      toursSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const categoriesList = [
-    'Student Trips',
-    'Adventure Tours',
-    'Camping Tours',
-    'Hiking Expeditions',
-    'Photography Tours',
-    'Family & Corporate'
+    "Student Trips",
+    "Adventure Tours",
+    "Camping Tours",
+    "Hiking Expeditions",
+    "Photography Tours",
+    "Family & Corporate",
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-between pt-16 sm:pt-20 overflow-hidden">
-      
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col justify-between pt-16 sm:pt-20 overflow-hidden"
+    >
       {/* Background Image with Parallax Style Deep Gradient Overlay */}
       <div className="absolute inset-0 z-0 bg-black overflow-hidden">
         <AnimatePresence initial={false}>
@@ -91,7 +108,6 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
 
       {/* Main Content Area */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center pt-12 pb-8">
-        
         {/* Expedition Status Banner */}
         <div className="mb-6 inline-flex max-w-lg self-start">
           <div className="flex items-center space-x-2.5 bg-slate-950/80 backdrop-blur-md border border-brand-orange/30 px-3.5 py-1.5 rounded-full shadow-lg">
@@ -118,7 +134,10 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
             </span>
           </h1>
           <p className="font-sans text-sm sm:text-lg text-slate-200 font-normal leading-relaxed mb-8 max-w-2xl drop-shadow">
-            Experience the majestic vertical towers, cosmic starry plains, and raging turquoise lakes of Northern Pakistan. Hand-crafted, all-inclusive small group expeditions departing from Islamabad, engineered for travelers aged 18–35.
+            Experience the majestic vertical towers, cosmic starry plains, and
+            raging turquoise lakes of Northern Pakistan. Hand-crafted,
+            all-inclusive small group expeditions departing from Islamabad,
+            engineered for travelers aged 18–35.
           </p>
 
           {/* Call to Actions */}
@@ -141,13 +160,16 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
         </div>
 
         {/* Quick Travel Finder Widget (Bento Style) */}
-        <form onSubmit={handleQuickSearch} className="w-full max-w-4xl bg-slate-950/80 backdrop-blur-xl border border-white/5 rounded-2xl p-4 sm:p-5 shadow-2xl">
+        <form
+          onSubmit={handleQuickSearch}
+          className="w-full max-w-4xl bg-slate-950/80 backdrop-blur-xl border border-white/5 rounded-2xl p-4 sm:p-5 shadow-2xl"
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            
             {/* Destination Field */}
             <div className="relative">
               <label className="block text-[10px] font-mono font-semibold tracking-wider text-slate-400 uppercase mb-1.5 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-brand-orange" /> DESTINATION TARGET
+                <MapPin className="w-3 h-3 text-brand-orange" /> DESTINATION
+                TARGET
               </label>
               <select
                 value={selectedDestination}
@@ -166,7 +188,8 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
             {/* Category / Vibe Field */}
             <div className="relative">
               <label className="block text-[10px] font-mono font-semibold tracking-wider text-slate-400 uppercase mb-1.5 flex items-center gap-1">
-                <Compass className="w-3 h-3 text-brand-orange" /> TRIP STYLE / VIBE
+                <Compass className="w-3 h-3 text-brand-orange" /> TRIP STYLE /
+                VIBE
               </label>
               <select
                 value={selectedCategory}
@@ -192,10 +215,8 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
                 <span>Search Basecamp Files</span>
               </button>
             </div>
-
           </div>
         </form>
-
       </div>
 
       {/* Live Tactical Feed Ticker Footer */}
@@ -222,9 +243,17 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
                 transition={{ duration: 0.4 }}
                 className="absolute inset-0 flex items-center space-x-2 text-xs sm:text-sm font-sans font-medium text-slate-300"
               >
-                <span className="text-brand-amber font-mono font-bold">[{EXPEDITION_ALERTS[currentAlertIndex].teamName} @ {EXPEDITION_ALERTS[currentAlertIndex].location} - {EXPEDITION_ALERTS[currentAlertIndex].altitude}]:</span>
-                <span className="truncate italic">"{EXPEDITION_ALERTS[currentAlertIndex].message}"</span>
-                <span className="text-[10px] font-mono text-slate-500 whitespace-nowrap">({EXPEDITION_ALERTS[currentAlertIndex].timestamp})</span>
+                <span className="text-brand-amber font-mono font-bold">
+                  [{EXPEDITION_ALERTS[currentAlertIndex].teamName} @{" "}
+                  {EXPEDITION_ALERTS[currentAlertIndex].location} -{" "}
+                  {EXPEDITION_ALERTS[currentAlertIndex].altitude}]:
+                </span>
+                <span className="truncate italic">
+                  "{EXPEDITION_ALERTS[currentAlertIndex].message}"
+                </span>
+                <span className="text-[10px] font-mono text-slate-500 whitespace-nowrap">
+                  ({EXPEDITION_ALERTS[currentAlertIndex].timestamp})
+                </span>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -235,7 +264,6 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
           </div>
         </div>
       </div>
-
     </section>
   );
 }
