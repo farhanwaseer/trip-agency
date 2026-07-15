@@ -274,7 +274,8 @@ export default function TourDirectory({
                       <div>
                         <span className="font-mono text-[9px] text-slate-500 block">BASE PER HEAD</span>
                         <span className="font-display font-extrabold text-white text-lg">
-                          PKR {tour.costPKR.toLocaleString()}
+                          {/* PKR {tour.costPKR.toLocaleString()} */}
+                          PKR -- SOON
                         </span>
                         <span className="font-mono text-[9px] text-slate-400 block mt-0.5">
                           Approx. USD ${tour.costUSD}

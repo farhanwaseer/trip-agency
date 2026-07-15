@@ -16,6 +16,7 @@ import {
   Moon,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import Logo from "../assets/images/trip-logo.png";
 
 interface NavbarProps {
   activeSection: string;
@@ -109,14 +110,16 @@ export default function Navbar({
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div
-            className="flex items-center space-x-3 cursor-pointer"
+            className="flex items-center my-8 cursor-pointer -ml-2 gap-3"
             onClick={() => handleNavClick("home")}
           >
-            <div className="bg-brand-orange/20 p-2 rounded-lg border border-brand-orange/40 text-brand-orange shadow-inner shadow-brand-orange/20">
-              <Compass className="w-6 h-6 animate-spin-slow" />
+            {/* <div className="bg-brand-orange/20 p-2 rounded-lg border border-brand-orange/40 text-brand-orange shadow-inner shadow-brand-orange/20"> */}
+            <div className=" ">
+              {/* <Compass className="w-6 h-6 animate-spin-slow" /> */}
+              <img src={Logo} alt="logo" className="w-17 h-18" />
             </div>
             <div>
-              <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1.5">
+              <span className="font-display font-bold  text-lg sm:text-xl tracking-tight text-white flex items-center gap-1.5">
                 ASTRA VIA
                 {/* <span className="text-xs font-mono font-medium px-1.5 py-0.5 bg-brand-orange/10 border border-brand-orange/30 text-brand-orange rounded">EXP</span> */}
               </span>
