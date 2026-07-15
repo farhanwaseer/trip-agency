@@ -20,11 +20,16 @@ export default function HeroSection({ onSearch, onExploreTours }: HeroSectionPro
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   const BACKGROUND_IMAGES = [
-    // '/src/assets/images/hero_mountain_1784037773882.jpg', // Original beautiful Passu cones/Karakoram
-    'https://images.unsplash.com/photo-1621244249243-436b79b5eea8?auto=format&fit=crop&w=2000&q=90', // Passu Cones golden hour
-    'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=90', // Turquoise Attabad Lake
-    'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=90', // Nanga Parbat majestic face
-    'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=2000&q=90'  // Skardu high-altitude mirror water
+    '/src/assets/images/hero_pic1.jpg', // Original beautiful Passu cones/Karakoram
+    '/src/assets/images/hero_pic2.jpg',
+    '/src/assets/images/hero_pic3.jpg',
+    '/src/assets/images/hero_pic4.jpg',
+    '/src/assets/images/hero_pic5.jpg',
+    '/src/assets/images/hero_pic6.jpg',
+    // 'https://images.unsplash.com/photo-1621244249243-436b79b5eea8?auto=format&fit=crop&w=2000&q=90', // Passu Cones golden hour
+    // 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=90', // Turquoise Attabad Lake
+    // 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=90', // Nanga Parbat majestic face
+    // 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=2000&q=90'  // Skardu high-altitude mirror water
   ];
 
   // Auto-scrolling live expedition alerts
