@@ -79,7 +79,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">PHYSICAL LOCATION</h4>
                     <p className="text-sm font-medium text-white mt-1">
-                      Plot 14-B, College Road, Sector F-7 Markaz
+                      College Road, Sector F-7 Markaz
                     </p>
                     <p className="text-xs text-slate-400">
                       Islamabad, 44000, Pakistan
@@ -109,7 +109,10 @@ export default function ContactSection() {
                   <div>
                     <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">VOICE COMM CHANNELS</h4>
                     <p className="text-sm font-medium text-white mt-1">
-                      +92 (51) 228-4037
+                      +92 301 2409683
+                    </p>
+                    <p className="text-sm font-medium text-white mt-1">
+                      +92 307 3237250
                     </p>
                     <p className="text-xs text-slate-400">
                       Mon - Sat, 09:00 AM to 06:00 PM PKT
@@ -177,7 +180,7 @@ export default function ContactSection() {
               </p>
 
               <a
-                href="https://wa.me/92512284037"
+                href="https://wa.me/923012409683"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-sans text-xs sm:text-sm font-semibold tracking-wide transition-all shadow-lg shadow-emerald-500/20 cursor-pointer"

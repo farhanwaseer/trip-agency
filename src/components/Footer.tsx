@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
             
             <p className="font-sans leading-relaxed text-slate-400 font-normal">
-              Pakistan's premier luxury & student wilderness tour collective. Exploring high glacier walls, starry plains, and deep gorges. Authorized and registered under DTS License #7411.
+              Pakistan's premier luxury & student wilderness tour collective. Exploring high glacier walls, starry plains, and deep gorges. Authorized and registered under DTS License .
             </p>
 
             {/* Live Clock Indicator */}
@@ -74,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-2.5 font-sans">
               <li>
                 <span className="block text-white font-semibold">Islamabad HQ</span>
-                <span className="block mt-0.5">Plot 14-B, Executive Plaza, F-7 Markaz</span>
+                <span className="block mt-0.5"> Executive Plaza, F-7 Markaz</span>
               </li>
               <li>
                 <span className="block text-white font-semibold">Gilgit Basecamp Outpost</span>
@@ -112,7 +112,7 @@ export default function Footer() {
             <ul className="space-y-3 font-mono text-[11px]">
               <li className="flex items-center space-x-2.5">
                 <Phone className="w-4 h-4 text-brand-orange" />
-                <span>+92 (051) 228-5400</span>
+                <span>+92 301 240-9683</span>
               </li>
               <li className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-brand-orange" />
